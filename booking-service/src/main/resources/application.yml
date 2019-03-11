@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   application:
-    name: flight-inventory
+    name: booking-service
   datasource:
     url: "jdbc:h2:mem:test;MODE=MySQL;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS flight"
     username: "sa"
