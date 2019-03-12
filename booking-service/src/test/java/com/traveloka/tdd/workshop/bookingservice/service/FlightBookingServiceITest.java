@@ -50,7 +50,7 @@ public class FlightBookingServiceITest {
                 .userId(1)
                 .build();
 
-        mockRestServiceServer.expect(requestTo("http://inventory-service/inventory?id="+flightBooking.getBookingDetail().getCode()))
+        mockRestServiceServer.expect(requestTo("http://flight-inventory/inventory?id="+flightBooking.getBookingDetail().getCode()))
                 .andExpect(method(HttpMethod.GET))
                 .andRespond(withSuccess("true", MediaType.APPLICATION_JSON));
 
