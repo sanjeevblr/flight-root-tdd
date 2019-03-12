@@ -19,7 +19,7 @@ public class FlightBookingService {
 
     public boolean createFlightBooking(FlightBooking flightBooking) {
 
-        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://localhost:8081/inventory?id=" + flightBooking.getBookingDetail().getCode(), Boolean.class);
+        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://flight-inventory/inventory?id=" + flightBooking.getBookingDetail().getCode(), Boolean.class);
 
         if(forEntity.getStatusCode() == HttpStatus.OK){
             FlightBooking saved = flightBookingRepository.save(flightBooking);
