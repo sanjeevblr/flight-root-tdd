@@ -19,7 +19,7 @@ public class BookingService {
     public boolean saveBooking(Booking booking){
         //WHere I will be calling the inventory service
 
-        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://localhost:8081/inventory?id=" + booking.getBookingDetails().getCode(), Boolean.class);
+        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://flight-inventory/inventory?id=" + booking.getBookingDetails().getCode(), Boolean.class);
 
         if(forEntity.getStatusCode().is2xxSuccessful() && forEntity.getBody()){
             Booking saved = bookingRepository.save(booking);
