@@ -34,9 +34,9 @@ public class FlightInventoryResource {
     }
 
     @GetMapping
-    ResponseEntity getFlightInventory(@RequestParam Integer id){
+    ResponseEntity isInventoryExists(@RequestParam Integer id){
         FlightInventory flightInventory = flightInventoryService.find(id);
-        return ResponseEntity.ok(flightInventory);
+        return ResponseEntity.ok(flightInventory != null);
     }
 
     private class FlightInventoryNotCreatedException extends RuntimeException {

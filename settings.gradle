@@ -4,4 +4,4 @@ pluginManagement {
     }
 }
 rootProject.name = 'flight-root'
-include 'flight-inventory'
+include 'flight-inventory', 'booking-service'
