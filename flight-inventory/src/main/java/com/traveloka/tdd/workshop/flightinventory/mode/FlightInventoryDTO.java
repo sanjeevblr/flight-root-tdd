@@ -19,7 +19,7 @@ public class FlightInventoryDTO {
 
     boolean availability;
 
-            String flightCarrier;
+    String flightCarrier;
 
     public boolean isValid() {
         return id > 0 && fromCity != null && toCity != null && flightCarrier != null;
