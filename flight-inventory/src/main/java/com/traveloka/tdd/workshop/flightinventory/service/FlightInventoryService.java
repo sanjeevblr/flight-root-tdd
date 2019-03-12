@@ -29,4 +29,7 @@ public class FlightInventoryService {
     }
 
 
+    public Boolean checkInventory(Integer id) {
+        return flightInventoryRepsitory.findById(id).isPresent();
+    }
 }

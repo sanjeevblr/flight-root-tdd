@@ -19,7 +19,7 @@ public class FlightBookingService {
 
     public boolean createFlightBooking(FlightBooking flightBooking) {
 
-        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://inventory-service/inventory?id=" + flightBooking.getBookingDetail().getCode(), Boolean.class);
+        ResponseEntity<Boolean> forEntity = restTemplate.getForEntity("http://localhost:8081/inventory?id=" + flightBooking.getBookingDetail().getCode(), Boolean.class);
 
         if(forEntity.getStatusCode() == HttpStatus.OK){
             FlightBooking saved = flightBookingRepository.save(flightBooking);
@@ -31,6 +31,10 @@ public class FlightBookingService {
 
 
 
+    }
+
+    public boolean isBookingCreated(Integer id) {
+        return flightBookingRepository.findById(id).isPresent();
     }
 
     private class BookingNotCreatedException extends RuntimeException {
