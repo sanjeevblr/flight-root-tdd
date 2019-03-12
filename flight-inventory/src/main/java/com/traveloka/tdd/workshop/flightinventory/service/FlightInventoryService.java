@@ -15,4 +15,8 @@ public class FlightInventoryService {
         FlightInventory saved = flightInventoryRepository.save(flightInventory);
         return saved !=null;
     }
+
+    public FlightInventory find(Integer id) {
+        return flightInventoryRepository.findById(id).get();
+    }
 }

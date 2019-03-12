@@ -32,4 +32,8 @@ public class FlightInventory {
 
     @Column(name = "carrier_airlines")
     String carrierAirlines;
+
+    public boolean isComplete() {
+        return fromCity!=null && toCity !=null && carrierAirlines !=null;
+    }
 }
